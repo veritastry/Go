@@ -1,0 +1,36 @@
+功能点列表
+
+管理员登陆
+登陆
+退出
+
+用户管理
+	用户查询
+	用户增加
+	用户修改
+	用户删除
+
+
+
+
+E-R设计
+Admin
+	adminname varchar
+	password varchan
+User
+	username varchar
+	sex tinyint
+	age tinyint
+	birthday
+	address
+
+DDL创建
+
+CREATE TABLE `user` ( `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '自增id', `name` varchar(255) NOT NULL COMMENT '姓名',`addr` varchar(255) NOT NULL COMMENT '住址',`age` smallint(4) NOT NULL COMMENT '年龄',  `birth` varchar(100) NOT NULL COMMENT '性别',  `sex` smallint(4) NOT NULL COMMENT '生日',  `update_at` datetime NOT NULL COMMENT '更新时间',  `create_at` datetime NOT NULL COMMENT '创建时间',  KEY `id` (`id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+
+
+
+
+
+

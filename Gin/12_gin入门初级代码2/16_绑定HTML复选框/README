@@ -1,0 +1,7 @@
+POST请求
+
+http://localhost:8080/formHandler
+
+{
+	"colors":["red","green","blue"]
+}

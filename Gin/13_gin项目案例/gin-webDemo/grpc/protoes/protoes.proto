@@ -1,0 +1,20 @@
+// protoc --go_out=plugins=grpc:. *.proto
+
+syntax = "proto3";
+package protoes;
+
+message Name {
+    string name = 1;
+}
+message Msg1 {
+    string message = 1;
+}
+message Msg2 {
+    Msg1 message = 1;
+}
+
+//定义提供的服务
+service ServeRoute{
+    rpc Serve1(Name) returns (Msg1) {}
+    rpc Serve2(Name) returns (Msg2) {}
+}

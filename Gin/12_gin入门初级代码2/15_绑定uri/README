@@ -1,0 +1,8 @@
+GET请求
+http://localhost:8080/:name/:uri
+
+{
+    "id": "987fbc97-4bed-5078-9f07-9141ba07c9f3",
+    "name": "lala",
+    "status": "succeed"
+}

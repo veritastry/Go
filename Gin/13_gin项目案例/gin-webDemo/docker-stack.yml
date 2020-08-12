@@ -1,0 +1,56 @@
+version: "3.7"
+
+# docker swarm init --advertise-addr 127.0.0.1
+# docker stack deploy -c docker-stack.yml mydbs
+services:
+  # server:
+  #   image: xxx/server:latest
+  #   build: ./server
+  #   ports:
+  #     - "3000:3000"
+  # client:
+  #   image: xxx/client:latest
+  #   build: ./app
+  #   ports:
+  #     - "8080:8080"
+
+  # Use root/pl,okm123 as user/password credentials
+  mysql:
+    image: mysql:latest
+    volumes:
+      - type: volume
+        source: mysqldata
+        target: /var/lib/mysql
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: "pl,okm123"
+
+  redis:
+    image: redis:latest
+    volumes:
+      - type: volume
+        source: redisdata
+        target: /data
+    ports:
+      - "6379:6379"
+    command: redis-server --requirepass pl,okm123
+
+  mongoDB:
+    image: mongo:latest
+    volumes:
+      - type: volume
+        source: mongodata
+        target: /data/db
+    ports:
+      - "27017:27017"
+    environment:
+      # provide your credentials here
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=pl,okm123
+
+volumes:
+  mysqldata:
+  redisdata:
+  mongodata:

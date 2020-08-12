@@ -1,0 +1,104 @@
+接口文档
+环境配置：
+base_url:http://127.0.0.1：8880
+
+管理登陆接口
+地址：/login类型：post参数：
+username string 必填 用户名
+password string 必填 密码
+返回：
+{
+"errno"：0，
+"errmsg"：0，
+"data"：""，
+"trace_id"："xxxxxxxxxx"
+}
+
+管理退出接口
+地址：/loginout
+类型：get
+参数：
+I返回：
+{
+"errno"：0，
+"errmsg"：0，
+"data"：""，
+"trace_id"："xxxxxxxxxx"
+}
+
+用户列表接口
+地址：/user/listpage
+类型：post
+参数：
+page   string  必填  页数
+name  string  选添  用户名
+返回：
+{
+"errno"：0，
+"errmsg"：0，
+"data"：{
+"list"：[
+{
+"id"：1，
+"name"："姓名"，
+"addr"："地址"，
+"age"：1，
+"birth"："2000-01-02"，
+"sex"：1，
+"update_at"："2019-01-02 15：04：01"，
+"create_at"："2019-01-02 15：04：01"，
+}
+],
+"total":100
+},
+"trace_id":"xxxxxxxxxx"
+}
+
+添加用户接口
+地址：/user/add
+类型：get、post
+参数：
+name string 必填 用户名
+sex  int       必填  性别
+age int        必填 年龄
+birth string  必填  生日
+addr string  必填  地址  
+返回：
+{
+"errno"：0，
+"errmsg"：0，
+"data"：""，
+"trace_id"："xxxxxxxxxx"
+}
+
+修改用户接口
+地址：/user/edit
+类型：get、post
+参数：
+id int               必填   用户
+id name string  必填  用户名
+sex  int            必填  性别
+age  int            必填  年龄
+birth string       必填  生日
+addr string       必填  地址
+返回：
+{
+"errno"：o，I"errmsg"：0，
+"data"：""，
+"trace_id"："xxxxxxxxxx"
+}
+
+删除用户接口
+地址：/user/remove、/user/batchremove
+类型：get、post参数：
+ids        string 必填    多个用户id以逗号间隔
+返回：
+{
+"errno"：0，
+"errmsg"：0，
+"data"：""，
+"trace_id"："xxxxxxxxxx"
+}
+ 
+
+

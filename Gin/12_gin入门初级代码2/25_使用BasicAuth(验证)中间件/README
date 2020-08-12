@@ -1,0 +1,2 @@
+通过浏览器访问，输入用户名和密码；
+通过URL提供用户名和密码，如：user:password@localhost:8080/admin/secrets；
