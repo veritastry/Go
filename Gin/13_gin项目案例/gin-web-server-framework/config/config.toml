@@ -1,0 +1,48 @@
+
+Debug = true
+
+[database]
+
+  [database.mysql]
+  host = "www.luxuze.club"
+  port = "3306"
+  username = "root"
+  password = "pl,okm123"
+  dbName = "gin"
+
+  [database.redis]
+  host = "47.105.181.69"
+  port = "6379"
+  password = "123456"
+  dbName = 0
+
+[server]
+port = ":4096"
+
+[wechat]
+wechatURL = "https://api.weixin.qq.com/sns/jscode2session"
+appid = "wx4bd3f0044643ec2c"
+secret = "ae33804c97317d0cfc66239027d106ca"
+grantType = "authorization_code"
+
+[qyWechat]
+wechatURL = "https://qyapi.weixin.qq.com/cgi-bin/miniprogram/jscode2session"
+getTokenURL = "https://qyapi.weixin.qq.com/cgi-bin/gettoken"
+corpid = "ww17f8d10783494584"
+secret = "i5t-rh8bXeNCgihcYPrG9ZPpWkivzPJ69sv570osk6I"
+grantType = "authorization_code"
+
+  [qyWechat.thirdParty]
+  suiteTokenURL = "https://qyapi.weixin.qq.com/cgi-bin/service/get_suite_token"
+  suiteID = "ww831f04b6b486f6d9"
+  suitSecret = "JhY2CM6MQw216n7CzVJ68WfrqAS1RWLjDgRxtPyAznU"
+  tpURL = "https://qyapi.weixin.qq.com/cgi-bin/service/miniprogram/jscode2session"
+
+[clients]
+data = [ ["gamma", "delta"], [1, 2] ] # just an update to make sure parsers support it
+
+# Line breaks are OK when inside arrays
+hosts = [
+  "alpha",
+  "omega"
+]

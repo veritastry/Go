@@ -1,0 +1,92 @@
+basePath: /
+definitions:
+  db.TBL_USERS:
+    properties:
+      email:
+        type: string
+      id:
+        example: 1
+        type: integer
+      name:
+        example: may
+        type: string
+      phone:
+        type: string
+      pwd:
+        example: "123"
+        type: string
+    type: object
+  defs.HTTPError:
+    properties:
+      code:
+        example: 400
+        type: integer
+      message:
+        example: status bad request
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact:
+    email: luxuze1994@gmial.com
+    name: API Support
+    url: https://github.com/luxuze/demo-gin-server
+  description: '{{.Description}}'
+  license:
+    name: DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+    url: https://github.com/luxuze/demo-gin-server/blob/master/LICENSE
+  title: Demo Gin Server API
+  version: "1.0"
+paths:
+  /login/register:
+    post:
+      consumes:
+      - application/json
+      description: add user
+      parameters:
+      - description: add user
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/db.TBL_USERS'
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/db.TBL_USERS'
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/defs.HTTPError'
+            type: object
+      summary: user
+      tags:
+      - user
+  /wx:
+    get:
+      consumes:
+      - application/json
+      description: Request WX get resp
+      parameters:
+      - default: "123"
+        description: Request WX
+        in: query
+        name: code
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: Wx
+      tags:
+      - WX
+swagger: "2.0"

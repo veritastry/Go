@@ -1,0 +1,13 @@
+.idea
+
+!.vscode/launch.json
+.vscode
+
+.DS_Store
+
+*.log
+
+# docs
+
+!vendor/modules.txt
+vendor
